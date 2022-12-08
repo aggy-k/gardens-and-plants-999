@@ -1,0 +1,17 @@
+<div class="mx-auto w-50">
+  <h1>PlantTags#new</h1>
+
+  <%= form_with model: [@plant, @plant_tag] do |f| %>
+    <%= f.select :tag_id, options_for_select(Tag.pluck(:name, :id)), {}, {multiple: true, data: {behavior: 'tom-select'}} %>
+
+    <%= f.submit 'Save', class: "mt-4 btn btn-primary text-white rounded" %>
+
+  <% end %>
+
+
+  <%#= simple_form_for [@plant, @plant_tag] do |f| %>
+    <%#= f.association :tag, input_html: {} %>
+    <%#= f.input :tag_id %>
+    <%#= f.submit 'Save', class: "btn btn-primary text-white rounded" %>
+  <%# end %>
+</div>
